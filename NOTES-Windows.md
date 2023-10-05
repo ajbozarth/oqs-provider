@@ -38,10 +38,10 @@ release symbols, suitable for use with a release-symbol `openssl` build
 is created.
 
 If `openssl` and/or `liboqs` have not been installed to system standard locations
-use the `cmake` defines "-DOPENSSL_ROOT_DIR" and/or "-Dliboqs_DIR" to utilize
+use the `cmake` defines "-DOPENSSL_ROOT_DIR" and/or "-DLIBOQS_DIR" to utilize
 those, e.g., like this:
 
-    cmake -DOPENSSL_ROOT_DIR=c:\opt\openssl3 -Dliboqs_DIR=c:\liboqs -S . -B _build && cmake --build _build && cmake --install _build
+    cmake -DOPENSSL_ROOT_DIR=c:\opt\openssl3 -DLIBOQS_DIR=c:\liboqs -S . -B _build && cmake --build _build && cmake --install _build
 
 Further configuration options are documented [here](CONFIGURE.md#build-install-options).
 

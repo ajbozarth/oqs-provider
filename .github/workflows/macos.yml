@@ -62,7 +62,7 @@ jobs:
            cmake --install _build
         working-directory: liboqs
       - name: build oqs-provider
-        run: liboqs_DIR=.localliboqs cmake -DOPENSSL_ROOT_DIR=.localopenssl32 -S . -B _build && cmake --build _build
+        run: LIBOQS_DIR=.localliboqs cmake -DOPENSSL_ROOT_DIR=.localopenssl32 -S . -B _build && cmake --build _build
       - name: Check Openssl providers
         run: OPENSSL_MODULES=_build/lib .localopenssl32/bin/openssl list -providers -provider oqsprovider -provider default
       - name: Run tests

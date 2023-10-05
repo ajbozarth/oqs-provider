@@ -30,7 +30,7 @@ activate further warning messages. In particular, when "Debug" has been set, dis
 [debugging capabilities](https://github.com/open-quantum-safe/oqs-provider/wiki/Debugging)
 are activated and additional setup warnings are output.
 
-### liboqs_DIR
+### LIBOQS_DIR
 
 This environment variable must be set to the location of the `liboqs` installation to be
 utilized in the build.
@@ -106,7 +106,7 @@ This can be used, for example, to facilitate a release of `oqsprovider`
 to track an old/stable `liboqs` release.
 Default is "main" (most current code).
 
-### liboqs_DIR
+### LIBOQS_DIR
 
 If this environment variable is set, `liboqs` is not being built but
 used from the directory specified in this variable: Both `include`

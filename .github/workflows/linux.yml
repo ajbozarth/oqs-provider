@@ -109,7 +109,7 @@ jobs:
           cmake -GNinja -B build \
                 -DCMAKE_BUILD_TYPE=Debug \
                 -DOPENSSL_ROOT_DIR="$PWD/openssl/install" \
-                -Dliboqs_DIR="$PWD/liboqs/install/lib/cmake/liboqs" \
+                -DLIBOQS_DIR="$PWD/liboqs/install/lib/cmake/liboqs" \
                 -DCMAKE_C_FLAGS="${ASAN_C_FLAGS}" \
                 -DCMAKE_EXE_LINKER_FLAGS="${ASAN_C_FLAGS}"
           cmake --build build -j$(nproc)
@@ -187,7 +187,7 @@ jobs:
                 -DCMAKE_BUILD_TYPE=Release \
                 -DCMAKE_INSTALL_PREFIX="${INSTALL_DIR}" \
                 -DOPENSSL_ROOT_DIR="${INSTALL_DIR}" \
-                -Dliboqs_DIR="${INSTALL_DIR}/lib/cmake/liboqs"
+                -DLIBOQS_DIR="${INSTALL_DIR}/lib/cmake/liboqs"
           cmake --build build -j$(nproc)
           cmake --install build
 

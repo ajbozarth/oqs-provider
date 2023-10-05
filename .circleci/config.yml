@@ -196,7 +196,7 @@ jobs:
                     oqsprovider_cmake_args="${oqsprovider_cmake_args} -DOQS_PROVIDER_BUILD_STATIC=ON"
                   fi
                   export OPENSSL_INSTALL="$(brew --prefix << parameters.OPENSSL_PREINSTALL >>)"
-                  mkdir _build && cd _build && liboqs_DIR=`pwd`/../.local cmake -GNinja -DOPENSSL_ROOT_DIR="${OPENSSL_INSTALL}" ${oqsprovider_cmake_args} .. && ninja && echo "export OPENSSL_INSTALL=$OPENSSL_INSTALL" >> "$BASH_ENV" && cd .. && echo "export DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:$OPENSSL_INSTALL/lib" >> "$BASH_ENV"
+                  mkdir _build && cd _build && LIBOQS_DIR=`pwd`/../.local cmake -GNinja -DOPENSSL_ROOT_DIR="${OPENSSL_INSTALL}" ${oqsprovider_cmake_args} .. && ninja && echo "export OPENSSL_INSTALL=$OPENSSL_INSTALL" >> "$BASH_ENV" && cd .. && echo "export DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:$OPENSSL_INSTALL/lib" >> "$BASH_ENV"
                   if << parameters.OQS_PROVIDER_BUILD_STATIC >> ; then
                     file _build/lib/oqsprovider.a
                   fi

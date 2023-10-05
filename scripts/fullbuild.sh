@@ -8,7 +8,7 @@
 # EnvVar OQS_ALGS_ENABLED: If set, defines OQS algs to be enabled, e.g., "STD"
 # EnvVar OPENSSL_INSTALL: If set, defines (binary) OpenSSL installation to use
 # EnvVar OPENSSL_BRANCH: Defines branch/release of openssl; if set, forces source-build of OpenSSL3
-# EnvVar liboqs_DIR: If set, needs to point to a directory where liboqs has been installed to
+# EnvVar LIBOQS_DIR: If set, needs to point to a directory where liboqs has been installed to
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
    SHLIBEXT="dylib"
@@ -68,7 +68,7 @@ if [ -z "$OPENSSL_INSTALL" ]; then
 fi
 
 # Check whether liboqs is built or has been configured:
-if [ -z $liboqs_DIR ]; then
+if [ -z $LIBOQS_DIR ]; then
  if [ ! -f ".local/lib/liboqs.$STATLIBEXT" ]; then
   echo "need to re-build static liboqs..."
   if [ ! -d liboqs ]; then
@@ -112,7 +112,7 @@ if [ -z $liboqs_DIR ]; then
       exit -1
   fi
  fi
- export liboqs_DIR=$(pwd)/.local
+ export LIBOQS_DIR=$(pwd)/.local
 fi
 
 # Check whether provider is built:

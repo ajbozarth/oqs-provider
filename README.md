@@ -99,7 +99,7 @@ in [CONFIGURE.md](CONFIGURE.md).
 To be able to build `oqsprovider`, OpenSSL 3.0 and liboqs need to be installed.
 It's not important where they are installed, just that they are. If installed
 in non-standard locations, these must be provided when running `cmake` via
-the variables "OPENSSL_ROOT_DIR" and "liboqs_DIR". See [CONFIGURE.md](CONFIGURE.md)
+the variables "OPENSSL_ROOT_DIR" and "LIBOQS_DIR". See [CONFIGURE.md](CONFIGURE.md)
 for details.
 
 ## Basic steps
